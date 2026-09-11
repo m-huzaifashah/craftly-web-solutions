@@ -10,7 +10,7 @@ export default function Footer() {
           <img
             src="/logo.png"
             alt="Craftly Web Logo"
-            className="h-8 w-auto object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.25)] cursor-pointer hover:scale-105 transition-transform"
+            className="h-8 w-auto object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.25)] cursor-pointer hover:scale-105 active:scale-95 transition-transform"
             onClick={scrollToTop}
           />
           <span className="font-display font-bold text-white text-base tracking-tight">
@@ -19,19 +19,19 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-8 text-sm font-medium text-slate-400">
-          <a href="#services" className="hover:text-cyan-400 transition-colors duration-200">
+          <a href="#services" className="hover:text-cyan-400 active:text-cyan-300 transition-colors duration-200">
             Services
           </a>
-          <a href="#work" className="hover:text-cyan-400 transition-colors duration-200">
+          <a href="#work" className="hover:text-cyan-400 active:text-cyan-300 transition-colors duration-200">
             Work
           </a>
-          <a href="#contact" className="hover:text-cyan-400 transition-colors duration-200">
+          <a href="#contact" className="hover:text-cyan-400 active:text-cyan-300 transition-colors duration-200">
             Contact
           </a>
           <button
             onClick={scrollToTop}
             aria-label="Scroll back to top"
-            className="hover:text-cyan-400 transition-colors duration-200 flex items-center gap-1 text-xs font-mono cursor-pointer"
+            className="hover:text-cyan-400 active:text-cyan-300 active:scale-95 transition-all duration-200 flex items-center gap-1 text-xs font-mono cursor-pointer"
           >
             <span>Top</span>
             <span className="material-symbols-outlined text-sm">arrow_upward</span>

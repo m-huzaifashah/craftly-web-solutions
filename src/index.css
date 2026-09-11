@@ -27,6 +27,7 @@
     background-color: #0a0f1d;
     color: #f1f5f9;
     font-family: var(--font-body);
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -120,8 +121,31 @@
   z-index: 10;
 }
 
-.sheen-card:hover::before {
-  transform: translateX(100%);
+@media (hover: hover) and (pointer: fine) {
+  .sheen-card:hover::before {
+    transform: translateX(100%);
+  }
+}
+
+/* Touch & Mobile Hover Optimization: Prevent sticky hover states on touch screens */
+@media (hover: none) or (pointer: coarse) {
+  .hover\:-translate-y-0\.5:hover,
+  .hover\:-translate-y-1:hover,
+  .hover\:-translate-y-1\.5:hover,
+  .hover\:-translate-y-2:hover,
+  .hover\:scale-105:hover,
+  .hover\:scale-\[1\.03\]:hover,
+  .hover\:scale-\[1\.02\]:hover,
+  .group:hover .group-hover\:scale-105,
+  .group:hover .group-hover\:scale-110,
+  .group:hover .group-hover\:translate-x-1,
+  .group:hover .group-hover\:translate-y-1 {
+    transform: none !important;
+  }
+
+  .sheen-card:hover::before {
+    transform: translateX(-100%) !important;
+  }
 }
 
 .reveal-on-scroll {

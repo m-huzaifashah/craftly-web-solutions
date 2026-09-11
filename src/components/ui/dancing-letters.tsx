@@ -110,22 +110,25 @@ export const DancingLetters = ({
     return () => clearTimeout(timer);
   }, []);
 
-  const handleClick = useCallback((index: number) => {
+  const triggerLetterAnimation = useCallback((index: number) => {
     setActiveIndices((prev) => {
+      if (prev.has(index)) return prev;
       const next = new Set(prev);
-      if (next.has(index)) {
-        next.delete(index);
-      }
-      setTimeout(() => {
-        setActiveIndices((prevInner) => {
-          const nextInner = new Set(prevInner);
-          nextInner.add(index);
-          return nextInner;
-        });
-      }, 10);
+      next.add(index);
       return next;
     });
   }, []);
+
+  const handleHoverStart = useCallback((index: number) => {
+    // Only trigger hover animations on devices with a mouse/fine pointer to prevent touch-scroll jitter
+    if (typeof window !== "undefined" && window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      triggerLetterAnimation(index);
+    }
+  }, [triggerLetterAnimation]);
+
+  const handleClick = useCallback((index: number) => {
+    triggerLetterAnimation(index);
+  }, [triggerLetterAnimation]);
 
   const handleAnimationComplete = useCallback((index: number) => {
     setActiveIndices((prev) => {
@@ -187,9 +190,7 @@ export const DancingLetters = ({
                 },
               }}
               animate={isActive ? "active" : isLoaded ? "visible" : undefined}
-              onHoverStart={() => {
-                if (!isActive) handleClick(id);
-              }}
+              onHoverStart={() => handleHoverStart(id)}
               onClick={() => handleClick(id)}
               onAnimationComplete={(definition) => {
                 if (definition === "active") handleAnimationComplete(id);

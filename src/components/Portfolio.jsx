@@ -49,10 +49,10 @@ export default function Portfolio() {
             <button
               key={f.key}
               onClick={() => setActiveFilter(f.key)}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer whitespace-nowrap ${
+              className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase transition-all duration-200 cursor-pointer whitespace-nowrap active:scale-95 ${
                 activeFilter === f.key
                   ? 'bg-cyan-400 text-[#071321] shadow-md shadow-cyan-500/20'
-                  : 'bg-[#111c2e]/90 text-slate-300 border border-[#1e2f47] hover:border-cyan-400/40 hover:text-white'
+                  : 'bg-[#111c2e]/90 text-slate-300 border border-[#1e2f47] hover:border-cyan-400/40 hover:text-white active:bg-[#15243b]'
               }`}
             >
               {f.label}
@@ -93,7 +93,7 @@ export default function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="absolute top-3.5 right-3.5 px-3 py-1 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 rounded-full text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-md backdrop-blur-sm"
+                  className="absolute top-3.5 right-3.5 px-3 py-1 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 rounded-full text-xs font-mono font-bold flex items-center gap-1.5 transition-all shadow-md backdrop-blur-sm active:scale-95"
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Live Site</span>
@@ -133,7 +133,7 @@ export default function Portfolio() {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-slate-300 hover:text-white font-medium hover:underline cursor-pointer flex items-center gap-1"
+                      className="text-slate-300 hover:text-white font-medium hover:underline cursor-pointer flex items-center gap-1 active:text-cyan-300"
                     >
                       <span>Details</span>
                     </button>
@@ -142,7 +142,7 @@ export default function Portfolio() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3.5 py-1.5 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-[#071321] font-bold rounded-lg transition-all flex items-center gap-1 shadow-sm shadow-cyan-500/20"
+                      className="px-3.5 py-1.5 bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-[#071321] font-bold rounded-lg transition-all flex items-center gap-1 shadow-sm shadow-cyan-500/20 active:scale-95"
                     >
                       <span>Visit Live</span>
                       <span className="material-symbols-outlined text-xs font-bold">

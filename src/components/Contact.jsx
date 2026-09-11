@@ -72,7 +72,7 @@ export default function Contact() {
           </p>
           <a
             href="mailto:craftlywebsolutions@gmail.com"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111c2e] border border-[#1e2f47] text-xs font-mono text-cyan-300 hover:text-white hover:border-cyan-400/50 transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#111c2e] border border-[#1e2f47] text-xs font-mono text-cyan-300 hover:text-white hover:border-cyan-400/50 active:scale-95 transition-all shadow-sm"
           >
             <span className="material-symbols-outlined text-sm text-cyan-400">mail</span>
             <span>craftlywebsolutions@gmail.com</span>
@@ -96,7 +96,7 @@ export default function Contact() {
               </p>
               <button
                 onClick={handleReset}
-                className="mt-6 px-6 py-2.5 bg-[#1e2f47] hover:bg-[#253752] text-slate-200 text-sm font-semibold rounded-lg transition-colors cursor-pointer"
+                className="mt-6 px-6 py-2.5 bg-[#1e2f47] hover:bg-[#253752] active:scale-95 text-slate-200 text-sm font-semibold rounded-lg transition-colors cursor-pointer"
               >
                 Send Another Message
               </button>

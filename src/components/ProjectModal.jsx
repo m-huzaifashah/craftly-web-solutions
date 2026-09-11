@@ -50,7 +50,7 @@ export default function ProjectModal({ project, onClose }) {
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#0a0f1d]/80 hover:bg-[#1e2f47] text-slate-300 hover:text-white border border-[#2e4566] flex items-center justify-center transition-all cursor-pointer"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#0a0f1d]/80 hover:bg-[#1e2f47] text-slate-300 hover:text-white border border-[#2e4566] flex items-center justify-center transition-all cursor-pointer active:scale-95"
           >
             <span className="material-symbols-outlined text-xl">close</span>
           </button>
@@ -114,7 +114,7 @@ export default function ProjectModal({ project, onClose }) {
           <div className="flex items-center gap-3">
             <button
               onClick={onClose}
-              className="px-4 py-2 bg-[#1e2f47] hover:bg-[#2e4566] text-slate-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+              className="px-4 py-2 bg-[#1e2f47] hover:bg-[#2e4566] text-slate-200 text-xs font-semibold rounded-lg transition-colors cursor-pointer active:scale-95"
             >
               Close
             </button>
@@ -123,7 +123,7 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 shadow-sm"
+                className="px-4 py-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
               >
                 <span>Visit Live Site</span>
                 <span className="material-symbols-outlined text-xs">arrow_outward</span>
@@ -132,7 +132,7 @@ export default function ProjectModal({ project, onClose }) {
             <a
               href="#contact"
               onClick={onClose}
-              className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#071321] text-xs font-bold rounded-lg shadow-md shadow-cyan-500/20 hover:from-cyan-300 hover:to-cyan-400 transition-all font-semibold"
+              className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-cyan-500 text-[#071321] text-xs font-bold rounded-lg shadow-md shadow-cyan-500/20 hover:from-cyan-300 hover:to-cyan-400 transition-all font-semibold active:scale-95"
             >
               Start Similar Project
             </a>
