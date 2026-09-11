@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #00f2fe;
+  --color-brand-sky: #38bdf8;
+  --color-brand-blue: #3b82f6;
+  --color-brand-dark: #0a0f1d;
+  --color-brand-card: #111c2e;
+  --color-brand-card-hover: #15243b;
+  --color-brand-border: #1e2f47;
+  --color-brand-border-light: #2e4566;
+  --color-primary: #E1E0CC;
+
+  --font-display: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0f1d;
+    color: #f1f5f9;
+    font-family: var(--font-body);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2f47;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e4566;
+}
+
+/* Motion Polish & Ambient Glow Keyframes */
+@keyframes heroPulse {
+  0%, 100% {
+    transform: translate(-50%, -10%) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-50%, -5%) scale(1.15);
+    opacity: 0.75;
+  }
+}
+
+@keyframes btnShimmer {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  30%, 100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.35), 0 0 40px rgba(56, 189, 248, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.55), 0 0 60px rgba(56, 189, 248, 0.25);
+  }
+}
+
+.animate-hero-glow {
+  animation: heroPulse 9s ease-in-out infinite alternate;
+}
+
+.btn-ambient-glow {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: btnShimmer 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.sheen-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.75s ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.sheen-card:hover::before {
+  transform: translateX(100%);
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
