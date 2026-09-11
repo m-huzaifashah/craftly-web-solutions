@@ -105,16 +105,14 @@ const PrismaHero = () => {
             <a
               href="#"
               aria-label="Craftly.web Homepage"
-              className="flex items-center gap-3 group transition-transform duration-200 hover:scale-[1.02]"
+              className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
             >
-              <div className="bg-white/95 px-2 py-1 rounded-lg shadow-md border border-white/20 flex items-center justify-center">
-                <img
-                  alt="Craftly Web Logo"
-                  className="h-7 sm:h-8 w-auto object-contain"
-                  src={logoImg}
-                />
-              </div>
-              <span className="font-display font-bold text-white text-lg tracking-tight hidden sm:inline-block">
+              <img
+                alt="Craftly Web Logo"
+                className="h-9 sm:h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(56,189,248,0.3)] transition-transform duration-200 group-hover:scale-110"
+                src={logoImg}
+              />
+              <span className="font-display font-bold text-white text-xl tracking-tight">
                 Craftly<span className="text-cyan-400">.web</span>
               </span>
             </a>
@@ -197,30 +195,53 @@ const PrismaHero = () => {
               </h1>
             </div>
 
-            <div className="col-span-12 flex flex-col gap-5 pb-6 lg:col-span-4 lg:pb-12">
+            <div className="col-span-12 flex flex-col gap-4 pb-6 lg:col-span-4 lg:pb-12">
               
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-medium backdrop-blur-sm"
+              >
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_6px_#22d3ee]"></span>
+                <span>Custom Web & SaaS Engineering</span>
+              </motion.div>
+
               <motion.p
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-200"
-                style={{ lineHeight: 1.4 }}
+                style={{ lineHeight: 1.5 }}
               >
-                <strong className="text-white font-semibold">Craftly Web</strong> is a modern full-stack engineering studio specialized in high-performance web solutions with React, Node, PostgreSQL, and MongoDB.
+                We build custom, lightning-fast web apps, customer portals, and flagship platforms that <strong className="text-white font-semibold">turn visitors into paying clients</strong>—with zero tech headaches.
               </motion.p>
 
-              <motion.a
-                href="#contact"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="group inline-flex items-center gap-2 self-start rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 py-1.5 pl-6 pr-1.5 text-sm font-bold text-[#071321] transition-all hover:gap-3 sm:text-base cursor-pointer shadow-lg shadow-cyan-500/25"
-              >
-                <span>Start a Project</span>
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#071321] text-cyan-300 transition-transform group-hover:scale-110 sm:h-10 sm:w-10">
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              </motion.a>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <motion.a
+                  href="#contact"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  className="group inline-flex items-center gap-2 self-start rounded-full bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 py-1.5 pl-5 pr-1.5 text-xs sm:text-sm font-bold text-[#071321] transition-all hover:gap-3 cursor-pointer shadow-lg shadow-cyan-500/25"
+                >
+                  <span>Start Your Project</span>
+                  <span className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-[#071321] text-cyan-300 transition-transform group-hover:scale-110">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </motion.a>
+
+                <motion.a
+                  href="#work"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-slate-300 hover:text-white bg-[#111c2e]/90 border border-[#1e2f47] hover:border-cyan-400/50 transition-all backdrop-blur-sm"
+                >
+                  <span>View Live Work</span>
+                  <span className="material-symbols-outlined text-xs text-cyan-400">arrow_downward</span>
+                </motion.a>
+              </div>
 
             </div>
           </div>

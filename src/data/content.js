@@ -117,8 +117,7 @@ export const PROJECTS = [
     hoverBorder: 'hover:border-amber-400/60 hover:shadow-amber-500/10',
     hoverTitle: 'group-hover:text-amber-300',
     metricColor: 'text-amber-400',
-    image:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+    image: '/oilandgas.png',
     imageAlt: 'Oil and Gas Solutions corporate engineering platform',
     description:
       'Complete industrial energy platform delivering rig contracting, drilling operations, logistics, QHSE training, and workforce management.',
